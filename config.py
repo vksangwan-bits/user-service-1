@@ -15,13 +15,15 @@ class Config:
 class DevelopmentConfig(Config):
     ENV = "development"
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://postgres1:Mango42@host.docker.internal:5432/user'
+    # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://postgres1:Mango42@host.docker.internal:5432/user'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://postgres1:Mango42@user-db:5432/user'
     SQLALCHEMY_ECHO = True
 
 
 class ProductionConfig(Config):
     ENV = "production"
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://postgres1:Mango42@host.docker.internal:5432/user'
+    # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://postgres1:Mango42@host.docker.internal:5432/user'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://postgres1:Mango42@user-db:5432/user'
     SQLALCHEMY_ECHO = False
 

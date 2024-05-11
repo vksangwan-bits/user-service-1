@@ -26,13 +26,12 @@ services:
     container_name: cuser_dbase
     image: postgres:latest
     ports:
-    - "5432:5432"
+    - "32000:5432"
     environment:
-      POSTGRES_USER: postgres1
+      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: Mango42
       POSTGRES_DB: user
     networks:
       - micro_network
     volumes:
     - userdb_vol:/var/lib/postgresql/data
-    - ./initdb-user.sql:/docker-entrypoint-initdb.d/initdb-user.sql
